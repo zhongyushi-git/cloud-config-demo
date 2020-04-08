@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      #指定从github读取的配置文件的名称，不加后缀名
+      name: cloud-config-client
+      #指定访问的配置环境
+      profile: dev
+      label: master
+      uri: http://config-3344.com:3344
