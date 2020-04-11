@@ -10,3 +10,18 @@ spring:
         git:
           #github仓库上面的git仓库名字
           uri: https://github.com/zhongyushi-git/spring-cloud-server-config.git
+  #rabbit相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#rabbitmq相关配置，暴露bus刷新配置的端点
+management:
+  #暴露bus刷新配置的端点
+  endpoints:
+    web:
+      exposure:
+        #凡是暴露监控、刷新的都要有actuator依赖，bus-refresh就是actuator
+        include: 'bus-refresh'
