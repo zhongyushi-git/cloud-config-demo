@@ -20,19 +20,18 @@ spring:
           #拉取到本地的路径，最好是空目录，原因是在第一次启动时会清空指定目录
           basedir: E:\config
 
+  #rabbit服务配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
-#  #rabbit相关配置
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
-#
-##rabbitmq相关配置，暴露bus刷新配置的端点
-#management:
-#  #暴露bus刷新配置的端点
-#  endpoints:
-#    web:
-#      exposure:
-#        #凡是暴露监控、刷新的都要有actuator依赖，bus-refresh就是actuator
-#        include: 'bus-refresh'
+#rabbitmq暴露bus刷新配置的端点
+management:
+  #暴露bus刷新配置的端点
+  endpoints:
+    web:
+      exposure:
+        #凡是暴露监控、刷新的都要有actuator依赖，bus-refresh就是actuator
+        include: 'bus-refresh'
